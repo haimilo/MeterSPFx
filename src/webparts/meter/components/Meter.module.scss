@@ -1,0 +1,62 @@
+@import "~@fluentui/react/dist/sass/References.scss";
+
+.meter {
+    overflow: hidden;
+    padding: 1em;
+    color: "[theme:bodyText, default: #323130]";
+    color: var(--bodyText);
+    &.teams {
+        font-family: $ms-font-family-fallbacks;
+    }
+}
+
+.Title {
+}
+
+.Description {
+}
+
+.Percentage {
+}
+
+.MeterBarContainer {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+}
+
+.MeterBarPercentage {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 10px;
+    transition: width 2s ease-in-out;
+}
+
+.MeterBarPercentageText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.MeterBarPercentageTooltip {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #4caf50;
+    padding: 10px;
+    border-radius: 10px;
+    transition: width 2s ease-in-out;
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: underline;
+}
