@@ -10,9 +10,10 @@ const Meter = (props: IMeterProps) => {
     percentage,
     showPercentageValue,
     headerAlignment,
+    colorPercentage,
   } = props;
 
-  console.log("headerAlignment", headerAlignment);
+  console.log("colorPercentage", colorPercentage);
 
   const alignHeader = useMemo(() => {
     switch (headerAlignment) {
@@ -26,8 +27,6 @@ const Meter = (props: IMeterProps) => {
         return "start";
     }
   }, [headerAlignment]);
-
-  console.log("alignHeader", alignHeader);
 
   return (
     <div className="ms-Grid-row">
@@ -47,6 +46,7 @@ const Meter = (props: IMeterProps) => {
           percentage={percentage}
           context={props.context}
           showPercentageValue={showPercentageValue}
+          colorPercentage={colorPercentage}
         />
       </div>
     </div>

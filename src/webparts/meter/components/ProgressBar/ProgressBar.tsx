@@ -7,14 +7,15 @@ export interface IProgressBar {
   context: WebPartContext;
   percentage: number;
   showPercentageValue: boolean;
+  colorPercentage: string;
 }
 
 const ProgressBar = (props: IProgressBar) => {
-  const { percentage, showPercentageValue } = props;
+  const { percentage, showPercentageValue, colorPercentage } = props;
   const [setTooltip, setTooltipState] = useState(false);
   const [isOpenPropertyPane, setOpenPropertyPaneState] = useState(false);
   const [timeoutId, setTimeoutId] = useState();
-  console.log("percentage", percentage);
+  console.log("colorPercentage", colorPercentage);
 
   const perfectPercentage = React.useMemo(() => {
     if (percentage === undefined) {
@@ -48,6 +49,7 @@ const ProgressBar = (props: IProgressBar) => {
         className={styles.MeterBarPercentage}
         style={{
           width: `${perfectPercentage}%`,
+          backgroundColor: colorPercentage,
         }}
       />
       {showPercentageValue && (
@@ -65,6 +67,9 @@ const ProgressBar = (props: IProgressBar) => {
             // open the config
             props.context.propertyPane.open();
             setOpenPropertyPaneState(true);
+          }}
+          style={{
+            backgroundColor: colorPercentage,
           }}
         >
           {`The percentage is: ${perfectPercentage}%`}
